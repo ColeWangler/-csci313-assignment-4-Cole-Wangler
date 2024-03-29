@@ -63,6 +63,14 @@ class Book(models.Model):
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn'
                                       '">ISBN number</a>')
 
+
+
+    def display_genre(self):
+        """Create a string for the Genre. This is required to display genre in Admin."""
+        return ', '.join(genre.name for genre in self.genre.all()[:3])
+
+    display_genre.short_description = 'Genre'
+
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(
@@ -75,7 +83,7 @@ class Book(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this book."""
         return reverse('book-detail', args=[str(self.id)])
-
+    
 
 
 import uuid # Required for unique book instances
