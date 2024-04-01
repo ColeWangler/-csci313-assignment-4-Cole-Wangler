@@ -52,11 +52,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mytestsite.urls'
 
+import os # needed by code below
+
+
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -125,3 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 SESSION_SAVE_EVERY_REQUEST = True
+
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
