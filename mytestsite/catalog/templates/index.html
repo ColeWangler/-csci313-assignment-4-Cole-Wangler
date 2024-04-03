@@ -6,7 +6,9 @@
     Welcome to LocalLibrary, a website developed by
     <em>Mozilla Developer Network</em>!
   </p>
-  <h2>Dynamic content</h2>
+
+  <hr>
+  <h2 style="margin-top: 60px;">Dynamic content</h2>
   <p>The library has the following record counts:</p>
   <ul>
     <li><strong>Books:</strong> {{ num_books }}</li>
@@ -14,7 +16,12 @@
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
-  <p>
+  <p style="margin-top: 100px; margin-bottom: 80px;">
     You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
   </p>
+  <footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+
+
 {% endblock %}

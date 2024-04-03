@@ -1,0 +1,28 @@
+.col-sm-2 {
+  background-color: grey;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+#logout-form {
+  display: inline;
+}
+#logout-form button {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  color: #fff;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.sidebarP {
+  text-align: center;
+  font-size: large;
+}
